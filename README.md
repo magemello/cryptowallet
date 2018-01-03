@@ -15,8 +15,8 @@ Upcoming Features:
 - Bittrex api
 - Bitfinex api
 - Trading Bot 
-
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0.
+- Mobile App
+- Desktop App
 
 ## Development server
 

@@ -1,7 +1,5 @@
-import { Component, ViewChild } from '@angular/core';
-import { CoinmarketcapService } from './coinmarketcap.service';
-import { MatPaginator, MatSort, MatTableDataSource, MatDialog } from '@angular/material';
-import { AddCryptoDialogComponent } from './add-crypto-dialog/add-crypto-dialog.component';
+import { ChangeDetectorRef, Component } from '@angular/core';
+import { MediaMatcher } from '@angular/cdk/layout';
 
 @Component({
   selector: 'app-root',
@@ -9,72 +7,17 @@ import { AddCryptoDialogComponent } from './add-crypto-dialog/add-crypto-dialog.
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  mobileQuery: MediaQueryList;
 
-  displayedColumns = [
-    'rank',
-    'name',
-    'market_cap_usd',
-    'price_usd',
-    'volume_usd',
-    'available_supply',
-    'percent_change_1h',
-    'percent_change_24h',
-    'percent_change_7d'
-  ];
+  private _mobileQueryListener: () => void;
 
-  @ViewChild(MatPaginator) paginator: MatPaginator;
-  @ViewChild(MatSort) sort: MatSort;
-
-  dataSource;
-
-  applyFilter(filterValue: string) {
-    filterValue = filterValue.trim(); // Remove whitespace
-    filterValue = filterValue.toLowerCase(); // Datasource defaults to lowercase matches
-    this.dataSource.filter = filterValue;
+  constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher) {
+    this.mobileQuery = media.matchMedia('(max-width: 600px)');
+    this._mobileQueryListener = () => changeDetectorRef.detectChanges();
+    this.mobileQuery.addListener(this._mobileQueryListener);
   }
 
-  constructor(private coinmarketcapService: CoinmarketcapService, public dialog: MatDialog) {
-    coinmarketcapService.ticker(0).subscribe(res => {
-      res = this.RemoveTheNumberFromAPropertyNameThatStartWithANumberBecauseABugInAngularMaterial(res);
-      this.dataSource = new MatTableDataSource(res);
-      this.dataSource.paginator = this.paginator;
-      this.dataSource.sort = this.sort;
-    });
-  }
-
-  public pageEvent(event) {
-    console.log(event);
-    this.coinmarketcapService.ticker(100 * event.pageIndex).subscribe(res => {
-      res = this.RemoveTheNumberFromAPropertyNameThatStartWithANumberBecauseABugInAngularMaterial(res);
-      this.dataSource = new MatTableDataSource(res);
-      this.dataSource.sort = this.sort;
-    });
-  }
-
-  public cssClassPercentage(value: any) {
-    if (value >= 0) {
-      return 'green';
-    } else {
-      return 'red';
-    }
-  }
-
-  public openDialog() {
-
-    const dialogRef = this.dialog.open(AddCryptoDialogComponent, {
-      width: '250px',
-      height: '250px',
-      data: { test: 'test'}
-    });
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-    });
-  }
-
-  private RemoveTheNumberFromAPropertyNameThatStartWithANumberBecauseABugInAngularMaterial(res) {
-    const jsonString = JSON.stringify(res).replace(/24h_volume_usd/g, "volume_usd");
-    res = JSON.parse(jsonString);
-    return res;
+  ngOnDestroy(): void {
+    this.mobileQuery.removeListener(this._mobileQueryListener);
   }
 }

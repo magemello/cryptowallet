@@ -1,0 +1,22 @@
+.red {
+  color: red;
+}
+
+.green {
+  color: green;
+}
+
+.title {
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  min-width: 420px;
+}
+
+.mat-table {
+  overflow: auto;
+  max-height: 420px;
+}

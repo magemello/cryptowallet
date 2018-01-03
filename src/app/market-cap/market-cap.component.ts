@@ -1,14 +1,14 @@
 import { Component, ViewChild } from '@angular/core';
 import { CoinmarketcapService } from './../coinmarketcap.service';
-import { MatPaginator, MatSort, MatTableDataSource, MatDialog } from '@angular/material';
-import { AddCryptoDialogComponent } from './../add-crypto-dialog/add-crypto-dialog.component';
+import { MatPaginator, MatSort, MatTableDataSource } from '@angular/material';
 
 @Component({
   selector: 'app-market-cap',
   templateUrl: './market-cap.component.html',
   styleUrls: ['./market-cap.component.css']
 })
-export class MarketCapComponent  {
+export class MarketCapComponent {
+
 
   displayedColumns = [
     'rank',
@@ -33,7 +33,7 @@ export class MarketCapComponent  {
     this.dataSource.filter = filterValue;
   }
 
-  constructor(private coinmarketcapService: CoinmarketcapService, public dialog: MatDialog) {
+  constructor(private coinmarketcapService: CoinmarketcapService) {
     coinmarketcapService.ticker(0).subscribe(res => {
       res = this.RemoveTheNumberFromAPropertyNameThatStartWithANumberBecauseABugInAngularMaterial(res);
       this.dataSource = new MatTableDataSource(res);
@@ -57,19 +57,6 @@ export class MarketCapComponent  {
     } else {
       return 'red';
     }
-  }
-
-  public openDialog() {
-
-    const dialogRef = this.dialog.open(AddCryptoDialogComponent, {
-      width: '250px',
-      height: '250px',
-      data: { test: 'test'}
-    });
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-    });
   }
 
   private RemoveTheNumberFromAPropertyNameThatStartWithANumberBecauseABugInAngularMaterial(res) {
