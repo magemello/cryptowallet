@@ -1,7 +1,15 @@
-.red{
+.red {
   color: red;
 }
 
-.green{
+.green {
   color: green;
+}
+
+.button-row {
+  float: right;
+}
+
+.title {
+  text-align: center;
 }

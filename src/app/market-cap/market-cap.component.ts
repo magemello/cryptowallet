@@ -1,14 +1,14 @@
 import { Component, ViewChild } from '@angular/core';
-import { CoinmarketcapService } from './coinmarketcap.service';
+import { CoinmarketcapService } from './../coinmarketcap.service';
 import { MatPaginator, MatSort, MatTableDataSource, MatDialog } from '@angular/material';
-import { AddCryptoDialogComponent } from './add-crypto-dialog/add-crypto-dialog.component';
+import { AddCryptoDialogComponent } from './../add-crypto-dialog/add-crypto-dialog.component';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'app-market-cap',
+  templateUrl: './market-cap.component.html',
+  styleUrls: ['./market-cap.component.css']
 })
-export class AppComponent {
+export class MarketCapComponent  {
 
   displayedColumns = [
     'rank',

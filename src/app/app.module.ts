@@ -10,13 +10,19 @@ import { MatListModule } from '@angular/material/list';
 import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
 import { MatFormFieldModule, MatPaginatorModule } from '@angular/material';
-import {MatInputModule} from '@angular/material';
+import { MatInputModule } from '@angular/material';
 import { LogPipe } from './log.pipe';
+import { MatButtonModule } from '@angular/material/button';
+import { MatDialogModule } from '@angular/material/dialog';
+import { AddCryptoDialogComponent } from './add-crypto-dialog/add-crypto-dialog.component';
+import { MarketCapComponent } from './market-cap/market-cap.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LogPipe
+    AddCryptoDialogComponent,
+    LogPipe,
+    MarketCapComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +35,12 @@ import { LogPipe } from './log.pipe';
     MatTableModule,
     MatPaginatorModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatButtonModule,
+    MatDialogModule
+  ],
+  entryComponents: [
+    AddCryptoDialogComponent
   ],
   providers: [CoinmarketcapService],
   bootstrap: [AppComponent]
