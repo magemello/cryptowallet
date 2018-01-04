@@ -2,7 +2,7 @@
 
 Under construction.
 
-![alt text](/docs/main.png)
+![alt text](/images/main.png)
 
 Demo:
 http://magemello.github.io/cryptowallet
