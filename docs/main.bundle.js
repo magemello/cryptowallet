@@ -75,9 +75,8 @@ var AddCryptoDialogComponent = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppRoutingModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__market_cap_market_cap_component__ = __webpack_require__("../../../../../src/app/market-cap/market-cap.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__wallet_wallet_component__ = __webpack_require__("../../../../../src/app/wallet/wallet.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__market_cap_market_cap_component__ = __webpack_require__("../../../../../src/app/market-cap/market-cap.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__wallet_wallet_component__ = __webpack_require__("../../../../../src/app/wallet/wallet.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -88,19 +87,18 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-
 var routes = [
     {
         path: 'market',
-        component: __WEBPACK_IMPORTED_MODULE_3__market_cap_market_cap_component__["a" /* MarketCapComponent */],
+        component: __WEBPACK_IMPORTED_MODULE_2__market_cap_market_cap_component__["a" /* MarketCapComponent */],
     },
     {
         path: 'wallet',
-        component: __WEBPACK_IMPORTED_MODULE_4__wallet_wallet_component__["a" /* WalletComponent */],
+        component: __WEBPACK_IMPORTED_MODULE_3__wallet_wallet_component__["a" /* WalletComponent */],
     },
     {
-        path: 'home',
-        component: __WEBPACK_IMPORTED_MODULE_2__app_component__["a" /* AppComponent */],
+        path: '',
+        component: __WEBPACK_IMPORTED_MODULE_2__market_cap_market_cap_component__["a" /* MarketCapComponent */],
     },
 ];
 var AppRoutingModule = /** @class */ (function () {
