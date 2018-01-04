@@ -2,7 +2,10 @@
 
 Under construction.
 
-![alt text](/doc/main.png)
+![alt text](/docs/main.png)
+
+Demo:
+http://magemello.github.io/cryptowallet
 
 Features:
 - List of cryptocurrencies based on https://coinmarketcap.com/api/
@@ -14,6 +17,7 @@ Upcoming Features:
 - Binance api
 - Bittrex api
 - Bitfinex api
+- Switch off external coinmarketcap api and create our api
 - Trading Bot 
 - Mobile App
 - Desktop App
