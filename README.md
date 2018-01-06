@@ -12,6 +12,8 @@ Features:
 
 Upcoming Features:
 - Crypto currency portfolio
+- Favorite coins in Market cap list
+- Filter Market cap list
 - GDAX api
 - Poloniex api
 - Binance api
