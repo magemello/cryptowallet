@@ -14,15 +14,19 @@ Upcoming Features:
 - Crypto currency portfolio
 - Favorite coins in Market cap list
 - Filter Market cap list
+- Authentication
+- 2FA Token generator
 - GDAX api
 - Poloniex api
 - Binance api
 - Bittrex api
 - Bitfinex api
 - Switch off external coinmarketcap api and create our api
-- Trading Bot 
+- Trading Bot (maybe based on Activiti BPM https://www.activiti.org/)
 - Mobile App
 - Desktop App
+- Markets open and close time lines recap
+
 
 ## Development server
 
