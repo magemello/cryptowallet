@@ -16,6 +16,7 @@ Upcoming Features:
 - Filter Market cap list
 - Authentication
 - 2FA Token generator
+- Docker installer
 - GDAX api
 - Poloniex api
 - Binance api
