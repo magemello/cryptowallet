@@ -12,6 +12,7 @@ Features:
 
 Upcoming Features:
 - Crypto currency portfolio
+- Analytics
 - Undo/Redo last operation
 - Browser Notification
 - Favorite coins in Market cap list
