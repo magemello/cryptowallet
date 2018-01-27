@@ -1,1 +1,60 @@
-<div>test</div>
+<h2>Add Crypto</h2>
+<form class="add-crypto-form">
+  <div>
+    <mat-form-field class="form-field full-width">
+      <input matInput placeholder="Coin Name" required>
+    </mat-form-field>
+  </div>
+
+  <div>
+    <mat-form-field class="form-field">
+      <textarea matInput placeholder="Coin Code" required></textarea>
+    </mat-form-field>
+
+    <mat-form-field class="form-field">
+      <mat-select placeholder="Bought With">
+        <mat-option value="BTC">BTC</mat-option>
+        <mat-option value="EUR">EUR</mat-option>
+        <mat-option value="USD">USD</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <div>
+    <mat-form-field class="form-field">
+      <input matInput placeholder="Exchange rate" type="number" class="example-right-align" required>
+      <span matPrefix>$&nbsp;</span>
+    </mat-form-field>
+
+    <mat-form-field class="form-field">
+      <textarea matInput placeholder="Amount Bought" required></textarea>
+    </mat-form-field>
+  </div>
+
+  <div>
+    <mat-form-field class="form-field">
+      <input matInput [matDatepicker]="picker" placeholder="Date & time" [formControl]="serializedDate">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field class="form-field">
+      <input matInput placeholder="Exchange" required>
+    </mat-form-field>
+  </div>
+
+  <div>
+    <mat-form-field hintLabel="Max 100 characters" class="form-field full-width">
+      <input matInput #input maxlength="100" placeholder="Note">
+      <mat-hint align="end">{{input.value?.length || 0}}/10</mat-hint>
+    </mat-form-field>
+  </div>
+
+  <br><br>
+
+  <div class="button-row">
+    <button mat-raised-button color="primary">Buy</button>
+    <button mat-raised-button color="warn">Sell</button>
+  </div>
+</form>
+

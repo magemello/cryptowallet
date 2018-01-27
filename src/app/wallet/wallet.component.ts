@@ -18,8 +18,8 @@ export class WalletComponent implements OnInit {
   public openDialog() {
 
     const dialogRef = this.dialog.open(AddCryptoDialogComponent, {
-      width: '250px',
-      height: '250px',
+      width: '500px',
+      height: '570px',
       data: {test: 'test'}
     });
 
