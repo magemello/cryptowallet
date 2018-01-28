@@ -3,6 +3,7 @@
 Under construction.
 
 ![alt text](/images/main.png)
+![alt text](/images/add.png)
 
 Demo:
 http://magemello.github.io/cryptowallet
