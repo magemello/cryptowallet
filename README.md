@@ -3,7 +3,7 @@
 Under construction.
 
 ![alt text](/images/main.png)
-![alt text](/images/add.png)
+![alt text](/images/add.png =250x250)
 
 Demo:
 http://magemello.github.io/cryptowallet
