@@ -17,10 +17,28 @@ webpackEmptyAsyncContext.id = "../../../../../src/$$_lazy_route_resource lazy re
 
 /***/ }),
 
+/***/ "../../../../../src/app/add-crypto-dialog/add-crypto-dialog.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".form-field {\n  margin-left: 25px;\n  width: 189px;\n}\n\n.full-width{\n  width: 90%;\n}\n", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
 /***/ "../../../../../src/app/add-crypto-dialog/add-crypto-dialog.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div>test</div>\n"
+module.exports = "<h2>Add Crypto</h2>\n<form class=\"add-crypto-form\">\n  <div>\n    <mat-form-field class=\"form-field full-width\">\n      <input matInput placeholder=\"Coin Name\" required>\n    </mat-form-field>\n  </div>\n\n  <div>\n    <mat-form-field class=\"form-field\">\n      <textarea matInput placeholder=\"Coin Code\" required></textarea>\n    </mat-form-field>\n\n    <mat-form-field class=\"form-field\">\n      <mat-select placeholder=\"Bought With\">\n        <mat-option value=\"BTC\">BTC</mat-option>\n        <mat-option value=\"EUR\">EUR</mat-option>\n        <mat-option value=\"USD\">USD</mat-option>\n      </mat-select>\n    </mat-form-field>\n  </div>\n\n  <div>\n    <mat-form-field class=\"form-field\">\n      <input matInput placeholder=\"Exchange rate\" type=\"number\" class=\"example-right-align\" required>\n      <span matPrefix>$&nbsp;</span>\n    </mat-form-field>\n\n    <mat-form-field class=\"form-field\">\n      <textarea matInput placeholder=\"Amount Bought\" required></textarea>\n    </mat-form-field>\n  </div>\n\n  <div>\n    <mat-form-field class=\"form-field\">\n      <input matInput [matDatepicker]=\"picker\" placeholder=\"Date & time\" [formControl]=\"serializedDate\">\n      <mat-datepicker-toggle matSuffix [for]=\"picker\"></mat-datepicker-toggle>\n      <mat-datepicker #picker></mat-datepicker>\n    </mat-form-field>\n\n    <mat-form-field class=\"form-field\">\n      <input matInput placeholder=\"Exchange\" required>\n    </mat-form-field>\n  </div>\n\n  <div>\n    <mat-form-field hintLabel=\"Max 100 characters\" class=\"form-field full-width\">\n      <input matInput #input maxlength=\"100\" placeholder=\"Note\">\n      <mat-hint align=\"end\">{{input.value?.length || 0}}/10</mat-hint>\n    </mat-form-field>\n  </div>\n\n  <br><br>\n\n  <div class=\"button-row\">\n    <button mat-raised-button color=\"primary\">Buy</button>\n    <button mat-raised-button color=\"warn\">Sell</button>\n  </div>\n</form>\n\n"
 
 /***/ }),
 
@@ -31,6 +49,7 @@ module.exports = "<div>test</div>\n"
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AddCryptoDialogComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_material__ = __webpack_require__("../../../material/esm5/material.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__("../../../forms/esm5/forms.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -45,10 +64,12 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
 };
 
 
+
 var AddCryptoDialogComponent = /** @class */ (function () {
     function AddCryptoDialogComponent(dialogRef, data) {
         this.dialogRef = dialogRef;
         this.data = data;
+        this.serializedDate = new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["b" /* FormControl */]((new Date()).toISOString());
     }
     AddCryptoDialogComponent.prototype.onNoClick = function () {
         this.dialogRef.close();
@@ -57,6 +78,7 @@ var AddCryptoDialogComponent = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
             selector: 'add-crypto-dialog',
             template: __webpack_require__("../../../../../src/app/add-crypto-dialog/add-crypto-dialog.component.html"),
+            styles: [__webpack_require__("../../../../../src/app/add-crypto-dialog/add-crypto-dialog.component.css")]
         }),
         __param(1, Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Inject */])(__WEBPACK_IMPORTED_MODULE_1__angular_material__["a" /* MAT_DIALOG_DATA */])),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_material__["i" /* MatDialogRef */], Object])
@@ -253,8 +275,8 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
                 __WEBPACK_IMPORTED_MODULE_3__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */],
                 __WEBPACK_IMPORTED_MODULE_3__angular_platform_browser_animations__["b" /* NoopAnimationsModule */],
-                __WEBPACK_IMPORTED_MODULE_2__angular_forms__["c" /* FormsModule */],
-                __WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* ReactiveFormsModule */],
+                __WEBPACK_IMPORTED_MODULE_2__angular_forms__["d" /* FormsModule */],
+                __WEBPACK_IMPORTED_MODULE_2__angular_forms__["i" /* ReactiveFormsModule */],
                 __WEBPACK_IMPORTED_MODULE_6__angular_common_http__["b" /* HttpClientModule */],
                 __WEBPACK_IMPORTED_MODULE_9__angular_material_table__["b" /* MatTableModule */],
                 __WEBPACK_IMPORTED_MODULE_10__angular_material__["r" /* MatPaginatorModule */],
@@ -552,8 +574,8 @@ var WalletComponent = /** @class */ (function () {
     };
     WalletComponent.prototype.openDialog = function () {
         var dialogRef = this.dialog.open(__WEBPACK_IMPORTED_MODULE_1__add_crypto_dialog_add_crypto_dialog_component__["a" /* AddCryptoDialogComponent */], {
-            width: '250px',
-            height: '250px',
+            width: '500px',
+            height: '570px',
             data: { test: 'test' }
         });
         dialogRef.afterClosed().subscribe(function (result) {
