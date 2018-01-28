@@ -3,7 +3,7 @@
 Under construction.
 
 ![alt text](/images/main.png)
-![](/images/add.png =250x250)
+<img src="/images/add.png" alt="Drawing" style="width: 250px;"/>
 
 Demo:
 http://magemello.github.io/cryptowallet
